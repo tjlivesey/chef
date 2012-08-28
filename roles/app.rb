@@ -1,4 +1,4 @@
-name "appserver"
+name "app"
 description "Rails appserver"
 
 default_attributes(
