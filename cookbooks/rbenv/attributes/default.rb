@@ -38,7 +38,7 @@ default['rbenv']['rubies']      = ["1.9.3-p194"]
 default['rbenv']['user_rubies'] = []
 
 # hash of gems and their list of additional gems to be installed.
-default['rbenv']['gems']      = Hash.new
+default['rbenv']['gems']= {'1.9.3-p194' =>[{'name' => 'bundler'}]}
 default['rbenv']['user_gems'] = Hash.new
 
 case platform
