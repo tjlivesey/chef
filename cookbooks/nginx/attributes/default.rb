@@ -31,7 +31,7 @@ default['nginx']['binary'] = "/usr/sbin/nginx"
 
 case node['platform']
 when "debian","ubuntu"
-  default['nginx']['user']       = "deploy"
+  default['nginx']['user']       = "ubuntu"
   default['nginx']['init_style'] = "runit"
 when "redhat","centos","scientific","amazon","oracle","fedora"
   default['nginx']['user']       = "nginx"
