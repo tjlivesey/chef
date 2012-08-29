@@ -8,6 +8,7 @@ run_list(
 		"recipe[imagemagick]",
 		"recipe[user::data_bag]",
 		"recipe[ruby_build]",
-		"recipe[rbenv::user]"
+		"recipe[rbenv::user]",
+		"recipe[mysql::ruby]"
     ]
 )
