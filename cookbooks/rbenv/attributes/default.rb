@@ -31,15 +31,21 @@ default['rbenv']['root_path'] = "/usr/local/rbenv"
 default['rbenv']['vagrant']['system_chef_solo'] = "/opt/ruby/bin/chef-solo"
 
 # a list of user hashes, each an isolated per-user rbenv installation
-default['rbenv']['user_installs'] = []
+default['rbenv']['user_installs'] = [
+  { 'user'    => 'deploy',
+      'rubies'  => ['1.9.3-p194'],
+      'global'  => '1.9.3-p194',
+      'gems'    => {'1.9.3-p194'    => [{ 'name'    => 'bundler'},{ 'name'    => 'rake' }]
+  }
+]
 
 # list of additional rubies that will be installed
-default['rbenv']['rubies']      = ["1.9.3-p194"]
-default['rbenv']['user_rubies'] = ["1.9.3-p194"]
+#default['rbenv']['rubies']      = ["1.9.3-p194"]
+#default['rbenv']['user_rubies'] = ["1.9.3-p194"]
 
 # hash of gems and their list of additional gems to be installed.
-default['rbenv']['gems']= {'1.9.3-p194' =>[{'name' => 'bundler'}]}
-default['rbenv']['user_gems'] = {'1.9.3-p194' =>[{'name' => 'bundler'}]}
+#default['rbenv']['gems']= {'1.9.3-p194' =>[{'name' => 'bundler'}]}
+#default['rbenv']['user_gems'] = {'1.9.3-p194' =>[{'name' => 'bundler'}]}
 
 case platform
 when "redhat","centos","fedora", "amazon", "scientific"
