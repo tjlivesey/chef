@@ -3,6 +3,7 @@ description "Graylog stack"
 
 run_list(
   [
-		"recipe[imagemagick]"
+		"recipe[graylog2::web_interface]",
+		"recipe[nginx]"
     ]
 )
