@@ -4,7 +4,7 @@ description "Graylog stack"
 run_list(
   [
     "recipe[mongodb]",
-		"recipe[graylog2::web_interface]",
+		"recipe[graylog2::apache2]",
 		"recipe[nginx]"
     ]
 )

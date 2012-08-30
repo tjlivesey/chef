@@ -1,5 +1,5 @@
 {
     "run_list": [
-       "role[graylog2::apache2]"
+       "role[graylog2]"
     ]
 }
