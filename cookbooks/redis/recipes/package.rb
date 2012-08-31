@@ -20,7 +20,7 @@
 
 package "redis-server"
 
-service "redis" do
+service "redis-server" do
   supports :status => true, :start => true, :stop => true, :restart => true
   action :start
 end
