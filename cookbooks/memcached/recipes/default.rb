@@ -45,7 +45,7 @@ node[:memcached][:instances].each do |instance|
   group "root"
   mode "0644"
   variables(
-    :log_file => node[:memcached][instance][:log_file]
+    :log_file => node[:memcached][instance][:log_file],
     :listen => node[:memcached][instance][:listen],
     :user => node[:memcached][instance][:user],
     :port => node[:memcached][instance][:port],
