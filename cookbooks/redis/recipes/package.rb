@@ -1,10 +1,9 @@
 #
-# Cookbook Name::       redis
-# Description::         Install From Release
-# Recipe::              install_from_release
-# Author::              Benjamin Black
+# Author:: Christian Trabold <christian.trabold@dkd.de>
+# Cookbook Name:: redis
+# Recipe:: package
 #
-# Copyright 2009, Infochimps, Inc.
+# Copyright 2011, dkd Internet Service GmbH
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,12 +18,17 @@
 # limitations under the License.
 #
 
-include_recipe "install_from"
+package "redis-server"
 
-install_from_release('redis') do
-  release_url  node[:redis][:release_url]
-  home_dir     node[:redis][:home_dir]
-  version      node[:redis][:version]
-  action       [ :install, :install_with_make ]
-  not_if{ File.exists?(File.join(node[:redis][:home_dir], 'redis-server')) }
+service "redis" do
+  supports :status => true, :start => true, :stop => true, :restart => true
+  action :start
+end
+
+template "/etc/redis/redis.conf" do
+  source "redis.conf.erb"
+  owner "root"
+  group "root"
+  mode 0644
+  notifies :restart, resources(:service => "redis"), :immediately 
 end

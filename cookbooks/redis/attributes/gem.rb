@@ -1,10 +1,10 @@
 #
-# Cookbook Name::       redis
-# Description::         Client support for Redis database
-# Recipe::              client
-# Author::              Benjamin Black (<b@b3k.us>)
+# Author:: Christian Trabold <christian.trabold@dkd.de>
+# Author:: Fletcher Nichol <fnichol@nichol.ca>
+# Cookbook Name:: redis
+# Attributes:: gem 
 #
-# Copyright 2009, Benjamin Black
+# Copyright 2011, dkd Internet Service GmbH
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-gem_package     'redis'
-gem_package     'redis-namespace'
+# list of ruby gems to install for redis
+default['redis']['gem']['packages']  = %w{ redis }
+

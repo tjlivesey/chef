@@ -1,5 +1,6 @@
 {
     "run_list": [
-       "role[cache]"
+       "role[cache]",
+			 "role[redis]"
     ]
 }

@@ -1,10 +1,9 @@
 #
-# Cookbook Name::       redis
-# Description::         Install From Ubuntu Package -- easy but lags in version
-# Recipe::              install_from_package
-# Author::              Benjamin Black
+# Author:: Christian Trabold <christian.trabold@dkd.de>
+# Cookbook Name:: redis
+# Recipe:: remove
 #
-# Copyright 2011, Benjamin Black
+# Copyright 2011, dkd Internet Service GmbH
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,8 +18,10 @@
 # limitations under the License.
 #
 
-unless node[:platform_version].to_f < 9.0
-  package "redis-server" do
-    action :install
-  end
+package "redis-server" do
+  action :remove
+end
+
+gem_package "redis" do
+  action :remove
 end
