@@ -35,7 +35,7 @@ end
 
 service "memcached" do
   supports :status => true, :start => true, :stop => true, :restart => true
-  action :nothing
+  action :start
 end
 
 node[:memcached][:instances].each do |instance|  
