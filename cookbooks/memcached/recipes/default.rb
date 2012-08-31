@@ -35,7 +35,12 @@ end
 
 service "memcached" do
   supports :status => true, :start => true, :stop => true, :restart => true
-  action :start
+  action :nothing
+end
+
+file "/etc/memcached.conf" do
+  action :delete
+  notifies :start, resources(:service => "memcached"), :immediately
 end
 
 node[:memcached][:instances].each do |instance|  
@@ -53,10 +58,6 @@ node[:memcached][:instances].each do |instance|
     )
     notifies :restart, resources(:service => "memcached"), :immediately
   end
-end
-
-execute "rename default memcached.conf" do
-  command 'mv /etc/memcached.conf /etc/memcached.conf.default'
 end
 
 case node[:lsb][:codename]
