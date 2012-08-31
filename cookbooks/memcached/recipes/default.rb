@@ -52,6 +52,7 @@ node[:memcached][:instances].each do |instance|
     :memory => node[:memcached][instance][:memory]
   )
   notifies :restart, resources(:service => "memcached"), :immediately
+end
 
 
 case node[:lsb][:codename]
