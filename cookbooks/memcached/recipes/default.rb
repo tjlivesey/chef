@@ -34,8 +34,8 @@ package "libmemcache-dev" do
 end
 
 service "memcached" do
-  action :start
   supports :status => true, :start => true, :stop => true, :restart => true
+  action :nothing
 end
 
 node[:memcached][:instances].each do |instance|  
