@@ -40,7 +40,6 @@ end
 
 file "/etc/memcached.conf" do
   action :delete
-  notifies :start, resources(:service => "memcached"), :immediately
 end
 
 node[:memcached][:instances].each do |instance|  
