@@ -16,6 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# Adapted for use by dropletpay.com to support instances on multiple ports
+# for different environments
 
 package "memcached" do
   action :upgrade
@@ -32,41 +34,25 @@ package "libmemcache-dev" do
 end
 
 service "memcached" do
-  action :nothing
+  action :start
   supports :status => true, :start => true, :stop => true, :restart => true
 end
 
-case node[:platform]
-when "redhat","centos","fedora"
- template "/etc/sysconfig/memcached" do
-  source "memcached.sysconfig.erb"
-  owner "root"
-  group "root"
-  mode "0644"
-  variables(
-    :listen => node[:memcached][:listen],
-    :user => node[:memcached][:user],
-    :port => node[:memcached][:port],
-    :maxconn => node[:memcached][:maxconn],
-    :memory => node[:memcached][:memory]
-  )
-  notifies :restart, resources(:service => "memcached"), :immediately
- end
-else
- template "/etc/memcached.conf" do
+node[:memcached][:instances].each do |instance|  
+  template "/etc/memcached_#{instance}.conf" do
   source "memcached.conf.erb"
   owner "root"
   group "root"
   mode "0644"
   variables(
-    :listen => node[:memcached][:listen],
-    :user => node[:memcached][:user],
-    :port => node[:memcached][:port],
-    :memory => node[:memcached][:memory]
+    :log_file => node[:memcached][instance][:log_file]
+    :listen => node[:memcached][instance][:listen],
+    :user => node[:memcached][instance][:user],
+    :port => node[:memcached][instance][:port],
+    :memory => node[:memcached][instance][:memory]
   )
   notifies :restart, resources(:service => "memcached"), :immediately
- end
-end
+
 
 case node[:lsb][:codename]
 when "karmic"
