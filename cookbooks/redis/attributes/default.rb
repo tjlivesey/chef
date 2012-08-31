@@ -17,7 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-default['redis']['bind']         = "127.0.0.1"
+#default['redis']['bind']         = "0.0.0.0" 
 default['redis']['port']         = "6379"
 default['redis']['pid']          = "/var/run/redis/redis-server.pid"
 default['redis']['config_path']  = "/etc/redis/redis.conf"
