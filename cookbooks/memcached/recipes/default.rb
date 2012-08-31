@@ -40,18 +40,19 @@ end
 
 node[:memcached][:instances].each do |instance|  
   template "/etc/memcached_#{instance}.conf" do
-  source "memcached.conf.erb"
-  owner "root"
-  group "root"
-  mode "0644"
-  variables(
-    :log_file => node[:memcached][instance][:log_file],
-    :listen => node[:memcached][instance][:listen],
-    :user => node[:memcached][instance][:user],
-    :port => node[:memcached][instance][:port],
-    :memory => node[:memcached][instance][:memory]
-  )
-  notifies :restart, resources(:service => "memcached"), :immediately
+    source "memcached.conf.erb"
+    owner "root"
+    group "root"
+    mode "0644"
+    variables(
+      :log_file => node[:memcached][instance][:log_file],
+      :listen => node[:memcached][instance][:listen],
+      :user => node[:memcached][instance][:user],
+      :port => node[:memcached][instance][:port],
+      :memory => node[:memcached][instance][:memory]
+    )
+    notifies :restart, resources(:service => "memcached"), :immediately
+  end
 end
 
 
