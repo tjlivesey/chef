@@ -55,6 +55,9 @@ node[:memcached][:instances].each do |instance|
   end
 end
 
+execute "rename default memcached.conf" do
+  command 'mv /etc/memcached.conf /etc/memcached.conf.default'
+end
 
 case node[:lsb][:codename]
 when "karmic"
