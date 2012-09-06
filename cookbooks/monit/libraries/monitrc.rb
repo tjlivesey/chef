@@ -6,8 +6,8 @@ class Chef
     def monitrc(name, variables={}, reload = :delayed)
       log "Making monitrc for: #{name}"
       template "/etc/monit/conf.d/#{name}.conf" do
-        owner "root"
-        group "root"
+        owner "ubuntu"
+        group "admin"
         mode 0644
         source "#{name}.conf.erb"
         variables variables

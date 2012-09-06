@@ -5,8 +5,8 @@ end
 if platform?("ubuntu")
   cookbook_file "/etc/default/monit" do
     source "monit.default"
-    owner "root"
-    group "root"
+    owner "deploy"
+    group "admin"
     mode 0644
   end
 end
@@ -20,7 +20,7 @@ end
 template "/etc/monit/monitrc" do
   owner "deploy"
   group "admin"
-  mode 0770
+  mode 0700
   source 'monitrc.erb'
   notifies :restart, resources(:service => "monit"), :immediate
 end
@@ -28,7 +28,7 @@ end
 directory "/etc/monit/conf.d/" do
   owner  'deploy'
   group 'admin'
-  mode 0775
+  mode 0700
   action :create
   recursive true
 end
