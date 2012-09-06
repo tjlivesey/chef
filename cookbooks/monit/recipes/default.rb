@@ -18,7 +18,7 @@ service "monit" do
 end
 
 template "/etc/monit/monitrc" do
-  owner "root"
+  owner "deploy"
   group "admin"
   mode 0770
   source 'monitrc.erb'
@@ -26,7 +26,7 @@ template "/etc/monit/monitrc" do
 end
 
 directory "/etc/monit/conf.d/" do
-  owner  'root'
+  owner  'deploy'
   group 'admin'
   mode 0775
   action :create
