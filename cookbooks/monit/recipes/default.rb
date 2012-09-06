@@ -27,8 +27,8 @@ end
 
 directory "/etc/monit/conf.d/" do
   owner  'root'
-  group 'root'
-  mode 0755
+  group 'admin'
+  mode 0775
   action :create
   recursive true
 end
