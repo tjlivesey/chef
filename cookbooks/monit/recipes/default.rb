@@ -18,7 +18,7 @@ service "monit" do
 end
 
 template "/etc/monit/monitrc" do
-  owner "root"
+  owner "deploy"
   group "admin"
   mode 0700
   source 'monitrc.erb'
