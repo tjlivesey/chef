@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+include_recipe "graylog2::server"
+
 # Install required APT packages
 package "build-essential"
 package "postfix"

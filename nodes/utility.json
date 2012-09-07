@@ -2,6 +2,6 @@
     "run_list": [
        "role[cache]",
 			 "role[redis]",
-			 "recipe[graylog2::apache2]"
+			 "recipe[graylog2::web_interface]"
     ]
 }
