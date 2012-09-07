@@ -10,6 +10,6 @@ run_list(
 		"recipe[ruby_build]",
 		"recipe[rbenv::user]",
 		"recipe[mysql::ruby]",
-		"recipe[monit]"
+		"recipe[bluepill]"
     ]
 )
