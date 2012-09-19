@@ -1,5 +1,7 @@
 {
     "run_list": [
-			 "role[tools]"
+       "role[web]",
+       "role[app]",
+			 "recipe[mysql::server]"
     ]
 }
