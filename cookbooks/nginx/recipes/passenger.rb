@@ -17,6 +17,7 @@
 
 #package 'libcurl4-openssl-dev' do
 package 'ruby-devel' do
+  package_name 'ruby_devel'
   action :install
 end
 
