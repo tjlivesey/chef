@@ -16,6 +16,7 @@ bash 'extract_tcp_proxy_module' do
     mkdir -p #{tcp_proxy_extract_path}
     tar xzf #{tcp_proxy_src_filepath} -C #{tcp_proxy_extract_path}
     mv #{tcp_proxy_extract_path}/*/* #{tcp_proxy_extract_path}/
+    patch -p1 < #{tcp_proxy_extract_path}/tcp.patch
   EOH
 
   not_if { ::File.exists?(tcp_proxy_extract_path) }
