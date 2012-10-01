@@ -1,7 +1,7 @@
 
 tcp_proxy_module_filename = "tcp-proxy-nginx-module.tar.gz"
 tcp_proxy_src_filepath = "#{Chef::Config['file_cache_path']}/#{tcp_proxy_module_filename}"
-tcp_proxy_extract_path = "#{Chef::Config['file_cache_path']}/nginx_tcp_proxy_module"
+tcp_proxy_extract_path = "#{Chef::Config['file_cache_path']}/nginx_tcp_proxy_module/#{tcp_proxy_module_filename}"
 
 remote_file tcp_proxy_src_filepath do
   source   node['nginx']['tcp_proxy']['url']
