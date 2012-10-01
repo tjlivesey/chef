@@ -75,7 +75,6 @@ node['nginx']['source']['modules'].each do |ngx_module|
 end
 
 configure_flags = node.run_state['nginx_configure_flags']
-Chef::Log.info("compiling nginx source with following flags: \n #{configure_flags}")
 nginx_force_recompile = node.run_state['nginx_force_recompile']
 
 bash "compile_nginx_source" do
