@@ -75,10 +75,12 @@ node['nginx']['source']['modules'].each do |ngx_module|
 end
 
 configure_flags = node.run_state['nginx_configure_flags']
+Chef::Log.info("compiling nginx source with following flags: \n #{configure_flags}")
 nginx_force_recompile = node.run_state['nginx_force_recompile']
 
 bash "compile_nginx_source" do
   cwd ::File.dirname(src_filepath)
+  Chef::Log.info("Run: cd nginx-#{node['nginx']['version']} && ./configure #{node.run_state['nginx_configure_flags'].join(" ")}")
   code <<-EOH
     tar zxf #{::File.basename(src_filepath)} -C #{::File.dirname(src_filepath)}
     cd nginx-#{node['nginx']['version']} && ./configure #{node.run_state['nginx_configure_flags'].join(" ")}
