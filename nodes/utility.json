@@ -2,6 +2,7 @@
     "run_list": [
        "role[cache]",
 			 "role[redis]",
+			"role[weboskcet]",
 			 "recipe[graylog2::web_interface]"
     ]
 }
