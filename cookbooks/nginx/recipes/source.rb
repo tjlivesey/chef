@@ -80,9 +80,12 @@ nginx_force_recompile = node.run_state['nginx_force_recompile']
 bash "compile_nginx_source" do
   cwd ::File.dirname(src_filepath)
   Chef::Log.info("Run: cd nginx-#{node['nginx']['version']} && ./configure #{node.run_state['nginx_configure_flags'].join(" ")}")
+  Chef::Log.info("Patches: #{node.run_state['nginx_patches'].join(";")}")
   code <<-EOH
     tar zxf #{::File.basename(src_filepath)} -C #{::File.dirname(src_filepath)}
-    cd nginx-#{node['nginx']['version']} && ./configure #{node.run_state['nginx_configure_flags'].join(" ")}
+    cd nginx-#{node['nginx']['version']}
+    #{node.run_state['nginx_patches'].join(";")}
+    ./configure #{node.run_state['nginx_configure_flags'].join(" ")}
     make
     make install
     rm -f #{node['nginx']['dir']}/nginx.conf
