@@ -21,8 +21,7 @@ bash 'extract_tcp_proxy_module' do
   not_if { ::File.exists?(tcp_proxy_extract_path) }
 end
 
-node.run_state['nginx_patches'] =
-  node.run_state['nginx_patches'] | ["patch -p1 < #{tcp_proxy_extract_path}/tcp.patch"]
+node.run_state['patches'] = "patch -p1 < #{tcp_proxy_extract_path}/tcp.patch"
 
 node.run_state['nginx_configure_flags'] =
   node.run_state['nginx_configure_flags'] | ["--add-module=#{tcp_proxy_extract_path}"]
