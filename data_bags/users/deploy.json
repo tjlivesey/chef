@@ -5,5 +5,5 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwuFygTPxi6guLn4FEOPT03OADmsW6m0DYS+BD0daWTVqNSNoSzlWiZ99RJKu0kVYJHEUEKyIjulpeOsArI9l/eR6wj7enDd1/gBgSFgg0hlXFgNXC1Rif9ygz8pTMz+5Fje6qNY3kOS0iXmb57SvUJoypNcNFnmDO/5vNqtrfp88l/pT5KoOwW3kOmG6+kM8Am2jkFiTvxy718NCPhNwEZ/kp+utHKBHDXueAJnAZ+DfXSJ3SwLC0GFV8rF06oUzi2cb7qSUwTDXp39LSu7R8RhUCKy9nt2hwcZ/NSOTxKy8+zQRnGeQj/uUoZgo7qiPCStPUQ2gIvW04EicfkdPL Tom@Toms-MacBook-Air.local",
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3kAxmeRTSJ3iQYGPzj3rWI3IKgzGBS+PyhVF7eHID2Z0w81xnFcQDy99MfDx8zYRaBos5V3n2+2gmrGGHJ/p3OiSW6DW9eMgGpPu2LbmBsneDp0YC8MqFpdnGW2qLHq5F0FUcSJq6kwta5YVTwHRp6yUrHZUhAkxt5nPfpRpv1hRWI6XkNV3tW27Mcl6ZcmNStdlJpaxK4X50+iOVP9gsTi6LsieFRwQqbdRRu5Ento0fOihMEMvbNHJ/581H9oMmcmVLIgG8nQpIcwn5gy2lvGKkV1tVCoMtSvFqxq1h4c9A4zuA4AltJHgK8oK5qtM/Dske/DbvOX0lpKibaXbb will@willgrant.org" 
     ],
-  "gid"       : "admin deploy"
+  "gid"       : "admin"
 }
