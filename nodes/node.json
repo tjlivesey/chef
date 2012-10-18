@@ -1,6 +1,7 @@
 {
     "run_list": [
        "role[web]",
-       "role[app]"
+       "role[app]",
+			 "recipe[papertrail]"
     ]
 }

@@ -9,6 +9,7 @@ dirs.each do |dir|
     owner node[:websocket][:user]
     group node[:websocket][:group]
     mode 0755
+    recursive
     action :create
   end
 end
