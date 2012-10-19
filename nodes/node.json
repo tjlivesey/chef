@@ -2,6 +2,7 @@
     "run_list": [
        "role[web]",
        "role[app]",
-			 "recipe[papertrail]"
+			 "recipe[papertrail]",
+			 "recipe[newrelic]"
     ]
 }
