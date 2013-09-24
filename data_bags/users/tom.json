@@ -2,7 +2,7 @@
   "id"        : "tom",
   "comment"   : "Creating Tom's user",
   "ssh_keys"  : [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwuFygTPxi6guLn4FEOPT03OADmsW6m0DYS+BD0daWTVqNSNoSzlWiZ99RJKu0kVYJHEUEKyIjulpeOsArI9l/eR6wj7enDd1/gBgSFgg0hlXFgNXC1Rif9ygz8pTMz+5Fje6qNY3kOS0iXmb57SvUJoypNcNFnmDO/5vNqtrfp88l/pT5KoOwW3kOmG6+kM8Am2jkFiTvxy718NCPhNwEZ/kp+utHKBHDXueAJnAZ+DfXSJ3SwLC0GFV8rF06oUzi2cb7qSUwTDXp39LSu7R8RhUCKy9nt2hwcZ/NSOTxKy8+zQRnGeQj/uUoZgo7qiPCStPUQ2gIvW04EicfkdPL Tom@Toms-MacBook-Air.local"
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwuFygTPxi6guLn4FEOPT03OADmsW6m0DYS+BD0daWTVqNSNoSzlWiZ99RJKu0kVYJHEUEKyIjulpeOsArI9l/eR6wj7enDd1/gBgSFgg0hlXFgNXC1Rif9ygz8pTMz+5Fje6qNY3kOS0iXmb57SvUJoypNcNFnmDO/5vNqtrfp88l/pT5KoOwW3kOmG6+kM8Am2jkFiTvxy718NCPhNwEZ/kp+utHKBHDXueAJnAZ+DfXSJ3SwLC0GFV8rF06oUzi2cb7qSUwTDXp39LSu7R8RhUCKy9nt2hwcZ/NSOTxKy8+zQRnGeQj/uUoZgo7qiPCStPUQ2gIvW04EicfkdPL Tom@Toms-MacBook-Air.local",
     ],
   "gid"       : "admin"
 }
